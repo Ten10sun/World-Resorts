@@ -1069,6 +1069,7 @@ main {
   transform: rotate(-90deg);
 }
 .side.right {
+  scroll-behavior: smooth; /* スムーズスクロールを有効化 */
   right: -50px;
 }
 .side.right.inview {
@@ -1099,4 +1100,42 @@ main {
 }
 .icon.fb::before {
   background-image: url(../images/facebook.svg);
-}/*# sourceMappingURL=style.css.map */
+}/* アンカーリンクのスクロール位置調整 */
+html {
+  scroll-padding-top: 80px; /* ナビゲーションバーの高さ分の余白を確保 */
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 60px; /* モバイル用の調整 */
+  }
+}
+
+/* 各セクションの上部に余白を追加 */
+#travel, #stays, #popular {
+  padding-top: 100px;
+  margin-top: -80px;
+}
+
+/* フッターのタブデザイン調整 */
+.footer__ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__ul .item a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.footer__ul .item a:hover {
+  color: #666;
+}
+
+/* モバイルメニューのスタイル *//*# sourceMappingURL=style.css.map */
